@@ -31,10 +31,16 @@ public class AggregatorController {
         return entries;
     }
 
+
     @GetMapping("/getDefinitionFor/{word}")
     public Entry getDefinitionFor(@PathVariable String word) {
         return aggregatorService.getDefinitionFor(word);
     }
+
+
+    @GetMapping("/getAllPalindromes")
+    public List<Entry> getAllPalindromes() {return aggregatorService.getAllPalindromes(); }
+
 
     @GetMapping("/getWordsThatContainSuccessiveLettersAndStarsWith/{chars}")
     public List<Entry> getWordsThatContainSuccessiveLettersAndStartsWith(@PathVariable String chars) {
